@@ -25,7 +25,8 @@
             android:layout_row="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:hint="#4"/>
 
         <EditText
             android:id="@+id/sc3"
@@ -36,7 +37,8 @@
             android:layout_row="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:hint="#3"/>
 
         <EditText
             android:id="@+id/sc2"
@@ -47,7 +49,8 @@
             android:layout_row="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:hint="#2"/>
 
         <EditText
             android:id="@+id/sc1"
@@ -58,7 +61,8 @@
             android:layout_row="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:hint="#1"/>
 
         <EditText
             android:id="@+id/sc8"
@@ -70,7 +74,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:inputType="number"
-            />
+            android:hint="#8"/>
 
         <EditText
             android:id="@+id/sc7"
@@ -82,7 +86,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:inputType="number"
-            />
+            android:hint="#7"/>
 
         <EditText
             android:id="@+id/sc6"
@@ -93,7 +97,8 @@
             android:layout_row="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:hint="#6"/>
 
         <EditText
             android:id="@+id/sc5"
@@ -104,7 +109,8 @@
             android:layout_row="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:hint="#5"/>
     </GridLayout>
 
 

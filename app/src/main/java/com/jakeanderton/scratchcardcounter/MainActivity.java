@@ -1,6 +1,7 @@
 package com.jakeanderton.scratchcardcounter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -40,6 +41,15 @@ public class MainActivity extends Activity
     int i7 = 0;
     int i8 = 0;
 
+    int m1 = 0;
+    int m2 = 0;
+    int m3 = 0;
+    int m4 = 0;
+    int m5 = 0;
+    int m6 = 0;
+    int m7 = 0;
+    int m8 = 0;
+
 
     private boolean isEmpty(EditText etText)
     {
@@ -58,7 +68,7 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        getActionBar().hide();
+       // getActionBar().hide();
         setContentView(R.layout.activity_main);
 
 
@@ -79,6 +89,15 @@ public class MainActivity extends Activity
         t6 = (TextView) findViewById(R.id.t6);
         t7 = (TextView) findViewById(R.id.t7);
         t8 = (TextView) findViewById(R.id.t8);
+
+//        int m1 = 10;
+//        int m2 = 5;
+//        int m3 = 5;
+//        int m4 = 3;
+//        int m5 = 2;
+//        int m6 = 2;
+//        int m7 = 1;
+//        int m8 = 1;
 
 //        t1.setText(t1.getText() + "-");
 //        t2.setText(t2.getText() + "-");
@@ -115,7 +134,7 @@ public class MainActivity extends Activity
                 }
                 else
                 {
-                    t1.setText("1: " + (i1 + 1) * 10);
+                    t1.setText("1: " + (i1 + 1) * m1);
                 }
 
             }
@@ -152,7 +171,7 @@ public class MainActivity extends Activity
                 }
                 else
                 {
-                    t2.setText("2: " + (i2 + 1) * 5);
+                    t2.setText("2: " + (i2 + 1) * m2);
                 }
 
 
@@ -189,7 +208,7 @@ public class MainActivity extends Activity
                 }
                 else
                 {
-                    t3.setText("3: " + (i3 + 1) * 5);
+                    t3.setText("3: " + (i3 + 1) * m3);
                 }
 
 
@@ -227,7 +246,7 @@ public class MainActivity extends Activity
                 }
                 else
                 {
-                    t4.setText("4: " + (i4 + 1) * 3);
+                    t4.setText("4: " + (i4 + 1) * m4);
                 }
 
 
@@ -264,7 +283,7 @@ public class MainActivity extends Activity
                 }
                 else
                 {
-                    t5.setText("5: " + (i5 + 1) * 2);
+                    t5.setText("5: " + (i5 + 1) * m5);
                 }
 
 
@@ -301,7 +320,7 @@ public class MainActivity extends Activity
                 }
                 else
                 {
-                    t6.setText("6: " + (i6 + 1) * 2);
+                    t6.setText("6: " + (i6 + 1) * m6);
                 }
 
 
@@ -338,7 +357,7 @@ public class MainActivity extends Activity
                 }
                 else
                 {
-                    t7.setText("7: " + (i7 + 1));
+                    t7.setText("7: " + (i7 + m7));
                 }
 
 
@@ -375,7 +394,7 @@ public class MainActivity extends Activity
                 }
                 else
                 {
-                    t8.setText("8: " + (i8 + 1));
+                    t8.setText("8: " + (i8 + m8));
                 }
 
 
@@ -397,6 +416,8 @@ public class MainActivity extends Activity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+
+
     }
 
     @Override
@@ -410,9 +431,13 @@ public class MainActivity extends Activity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings)
         {
-            return true;
+            Intent openSettingsMenu = new Intent(this,SettingsMenu.class);
+            startActivity(openSettingsMenu);
+
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
