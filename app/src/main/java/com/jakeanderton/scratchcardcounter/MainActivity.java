@@ -41,14 +41,14 @@ public class MainActivity extends Activity
     int i7 = 0;
     int i8 = 0;
 
-    int m1 = 0;
-    int m2 = 0;
-    int m3 = 0;
-    int m4 = 0;
-    int m5 = 0;
-    int m6 = 0;
-    int m7 = 0;
-    int m8 = 0;
+    static int m1 = 10;
+    static int m2 = 5;
+    static int m3 = 5;
+    static int m4 = 3;
+    static int m5 = 2;
+    static int m6 = 2;
+    static int m7 = 1;
+    static int m8 = 1;
 
 
     private boolean isEmpty(EditText etText)

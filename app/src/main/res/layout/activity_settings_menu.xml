@@ -31,100 +31,108 @@
 
 
         <TextView
-            android:text="1"
+            android:text="1:     £"
             />
 
         <EditText
             android:id="@+id/et1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
 
-            android:ems="5"/>
+
+            android:ems="5"
+            android:inputType="numberDecimal"/>
 
         <TextView
-            android:text="2"
+            android:text="2:     £"
             />
 
         <EditText
             android:id="@+id/et2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
 
-            android:ems="5"/>
+
+            android:ems="5"
+            android:inputType="numberDecimal"/>
 
         <TextView
-            android:text="3"
+            android:text="3:     £"
             />
 
         <EditText
             android:id="@+id/et3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
 
-            android:ems="5"/>
+
+            android:ems="5"
+            android:inputType="numberDecimal"/>
 
         <TextView
-            android:text="4"
+            android:text="4:     £"
             />
 
         <EditText
             android:id="@+id/et4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
 
-            android:ems="5"/>
+
+            android:ems="5"
+            android:inputType="numberDecimal"/>
 
         <TextView
-            android:text="5"
+            android:text="5:     £"
             />
 
         <EditText
             android:id="@+id/et5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
 
-            android:ems="5"/>
+
+            android:ems="5"
+            android:inputType="numberDecimal"/>
 
         <TextView
-            android:text="6"
+            android:text="6:     £"
             />
 
         <EditText
             android:id="@+id/et6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
 
-            android:ems="5"/>
+
+            android:ems="5"
+            android:inputType="numberDecimal"/>
 
         <TextView
-            android:text="7"
+            android:text="7:     £"
             />
 
         <EditText
             android:id="@+id/et7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
 
-            android:ems="5"/>
+
+            android:ems="5"
+            android:inputType="numberDecimal"/>
 
         <TextView
-            android:text="8"
+            android:text="8:     £"
             />
 
         <EditText
             android:id="@+id/et8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
 
-            android:ems="5"/>
+
+            android:ems="5"
+            android:inputType="numberDecimal"/>
     </GridLayout>
 
     <Button
@@ -134,7 +142,8 @@
         android:id="@+id/sumbit"
         android:layout_below="@+id/gridLayout2"
         android:layout_alignRight="@+id/gridLayout2"
-        android:layout_alignEnd="@+id/gridLayout2"/>
+        android:layout_alignEnd="@+id/gridLayout2"
+        android:onClick="sendValues"/>
 
 
 </RelativeLayout>
