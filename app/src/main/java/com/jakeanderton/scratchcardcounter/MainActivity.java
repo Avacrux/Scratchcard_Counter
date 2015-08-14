@@ -1,7 +1,9 @@
 package com.jakeanderton.scratchcardcounter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -9,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
-
 
 public class MainActivity extends Activity
 {
@@ -41,15 +42,16 @@ public class MainActivity extends Activity
     int i7 = 0;
     int i8 = 0;
 
-    static int m1 = 10;
-    static int m2 = 5;
-    static int m3 = 5;
-    static int m4 = 3;
-    static int m5 = 2;
-    static int m6 = 2;
-    static int m7 = 1;
-    static int m8 = 1;
+    static int m1 = 0;
+    static int m2 = 0;
+    static int m3 = 0;
+    static int m4 = 0;
+    static int m5 = 0;
+    static int m6 = 0;
+    static int m7 = 0;
+    static int m8 = 0;
 
+    static SharedPreferences.Editor sPEditor;
 
     private boolean isEmpty(EditText etText)
     {
@@ -63,14 +65,12 @@ public class MainActivity extends Activity
         }
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-       // getActionBar().hide();
+        // getActionBar().hide();
         setContentView(R.layout.activity_main);
-
 
         sc1 = (EditText) findViewById(R.id.sc1);
         sc2 = (EditText) findViewById(R.id.sc2);
@@ -90,6 +90,60 @@ public class MainActivity extends Activity
         t7 = (TextView) findViewById(R.id.t7);
         t8 = (TextView) findViewById(R.id.t8);
 
+        m1 = getPreferences(Context.MODE_PRIVATE).getInt("m1", 10);
+        m2 = getPreferences(Context.MODE_PRIVATE).getInt("m2", 5);
+        m3 = getPreferences(Context.MODE_PRIVATE).getInt("m3", 5);
+        m4 = getPreferences(Context.MODE_PRIVATE).getInt("m4", 3);
+        m5 = getPreferences(Context.MODE_PRIVATE).getInt("m5", 2);
+        m6 = getPreferences(Context.MODE_PRIVATE).getInt("m6", 2);
+        m7 = getPreferences(Context.MODE_PRIVATE).getInt("m7", 1);
+        m8 = getPreferences(Context.MODE_PRIVATE).getInt("m8", 1);
+
+//        m1 = spM1;
+//
+//        if (spM1 != 10)
+//        {
+//
+//
+//        }
+//        if (spM2 != 5)
+//        {
+//            m1 = spM2;
+//        }
+//        if (spM3 != 5)
+//        {
+//            m1 = spM3;
+//        }
+//        if (spM4 != 3)
+//        {
+//            m1 = spM4;
+//        }
+//        if (spM5 != 2)
+//        {
+//            m1 = spM5;
+//        }
+//        if (spM6 != 2)
+//        {
+//            m1 = spM6;
+//        }
+//        if (spM7 != 1)
+//        {
+//            m1 = spM7;
+//        }
+//        if (spM8 != 1)
+//        {
+//            m1 = spM8;
+//        }
+        System.out.println("Loading values...");
+        System.out.println(m1);
+        System.out.println(m2);
+        System.out.println(m3);
+        System.out.println(m4);
+        System.out.println(m5);
+        System.out.println(m6);
+        System.out.println(m7);
+        System.out.println(m8);
+        System.out.println("Load complete");
 //        int m1 = 10;
 //        int m2 = 5;
 //        int m3 = 5;
@@ -107,7 +161,6 @@ public class MainActivity extends Activity
 //        t6.setText(t6.getText() + "-");
 //        t7.setText(t7.getText() + "-");
 //        t8.setText(t8.getText() + "-");
-
 
         sc1.addTextChangedListener(new TextWatcher()
         {
@@ -174,7 +227,6 @@ public class MainActivity extends Activity
                     t2.setText("2: " + (i2 + 1) * m2);
                 }
 
-
             }
 
             @Override
@@ -210,7 +262,6 @@ public class MainActivity extends Activity
                 {
                     t3.setText("3: " + (i3 + 1) * m3);
                 }
-
 
             }
 
@@ -249,7 +300,6 @@ public class MainActivity extends Activity
                     t4.setText("4: " + (i4 + 1) * m4);
                 }
 
-
             }
 
             @Override
@@ -285,7 +335,6 @@ public class MainActivity extends Activity
                 {
                     t5.setText("5: " + (i5 + 1) * m5);
                 }
-
 
             }
 
@@ -323,7 +372,6 @@ public class MainActivity extends Activity
                     t6.setText("6: " + (i6 + 1) * m6);
                 }
 
-
             }
 
             @Override
@@ -359,7 +407,6 @@ public class MainActivity extends Activity
                 {
                     t7.setText("7: " + (i7 + m7));
                 }
-
 
             }
 
@@ -397,7 +444,6 @@ public class MainActivity extends Activity
                     t8.setText("8: " + (i8 + m8));
                 }
 
-
             }
 
             @Override
@@ -409,6 +455,35 @@ public class MainActivity extends Activity
 
     }
 
+    @Override
+    protected void onStop()
+    {
+        saveSettings();
+        super.onStop();
+    }
+
+    private void saveSettings()
+    {
+        sPEditor  = getPreferences(Context.MODE_PRIVATE).edit();
+
+        sPEditor.putInt("m1", m1);
+        sPEditor.putInt("m2", m2);
+        sPEditor.putInt("m3", m3);
+        sPEditor.putInt("m4", m4);
+        sPEditor.putInt("m5", m5);
+        sPEditor.putInt("m6", m6);
+        sPEditor.putInt("m7", m7);
+        sPEditor.putInt("m8", m8);
+        sPEditor.commit();
+
+
+        System.out.println("Saved to Phone : " +m1 + " " + m2 + " " + m3 + " " + m4 + " " + m5 + " " + m6 + " " + m7 + " " + m8);
+
+
+
+
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -416,7 +491,6 @@ public class MainActivity extends Activity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-
 
     }
 
@@ -431,13 +505,12 @@ public class MainActivity extends Activity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings)
         {
-            Intent openSettingsMenu = new Intent(this,SettingsMenu.class);
+            Intent openSettingsMenu = new Intent(this, SettingsMenu.class);
             startActivity(openSettingsMenu);
 
         }
 
         return super.onOptionsItemSelected(item);
     }
-
 
 }
