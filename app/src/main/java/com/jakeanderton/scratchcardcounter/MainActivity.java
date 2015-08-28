@@ -405,7 +405,7 @@ public class MainActivity extends Activity
                 }
                 else
                 {
-                    t7.setText("7: " + (i7 + m7));
+                    t7.setText("7: " + (i7 + 1) * m7);
                 }
 
             }
@@ -441,7 +441,7 @@ public class MainActivity extends Activity
                 }
                 else
                 {
-                    t8.setText("8: " + (i8 + m8));
+                    t8.setText("8: " + (i8 + 1) * m8);
                 }
 
             }
